@@ -1,10 +1,10 @@
 //Random number generator
-
+var countDownDate=0;
 document.addEventListener('DOMContentLoaded', function() {
   var link = document.getElementById('timeButton');
   link.addEventListener('click', function(){
-      var countDownDate = new Date().getTime()+15*60*1000;
-      getTime(countDownDate); 
+      countDownDate = new Date().getTime()+15*60*1000;
+      getTime(); 
   });
 });
 
@@ -20,7 +20,7 @@ function getNumber() {
 
 window.onload = getNumber; // Runs the function on click
 
-function getTime(countDownDate)
+function getTime()
 {
   
 
