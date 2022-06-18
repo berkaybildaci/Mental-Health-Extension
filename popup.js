@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var link = document.getElementById('timeButton');
   alert("workgin");
+  clearInterval(myfunc);
+  urMom(); 
   link.addEventListener('click', function(){
     countDownDate = new Date().getTime()+15*60*1000;
-    urMom(); 
     clearInterval(myfunc);
+    urMom(); 
   });
+
 });
 
 function eraseRecoredTime() {
