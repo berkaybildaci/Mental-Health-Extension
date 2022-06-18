@@ -50,8 +50,8 @@ var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 //});
 
 // Result is output to the specific element
-document.getElementById("mins").innerHTML = minutes + "m " 
-document.getElementById("secs").innerHTML = seconds  + "s " 
+ document.getElementById("mins").innerHTML = minutes + "m " 
+ document.getElementById("secs").innerHTML = seconds  + "s " 
   
 
 
