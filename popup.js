@@ -1,14 +1,13 @@
 //Random number generator
-var countDownDate=0;
+var countDownDate;
 document.addEventListener('DOMContentLoaded', function() {
+
   var link = document.getElementById('timeButton');
+  alert("workgin");
   link.addEventListener('click', function(){
-      eraseRecoredTime();
-      countDownDate = new Date().getTime()+15*60*1000;
-      getTime(); 
-      
+    countDownDate = new Date().getTime()+15*60*1000;
+    urMom(); 
   });
-  getTime(); 
 });
 
 function eraseRecoredTime() {
@@ -18,8 +17,6 @@ function eraseRecoredTime() {
   chrome.storage.sync.set({ "timeInMinutes" : 0}, function() {
   });
 }
-
-
 
 function getNumber() {
   var minNumber = 0; // The minimum number you want
@@ -31,11 +28,12 @@ function getNumber() {
 
 window.onload = getNumber; // Runs the function on click
 
-function getTime()
+function urMom()
 {
- 
+
 // Run myfunc every second
 var myfunc = setInterval(function() {
+
 
 var now = new Date().getTime();
 var timeleft = countDownDate - now;
@@ -72,6 +70,6 @@ if (timeleft < 0) {
     document.getElementById("secs").innerHTML = ""
     document.getElementById("end").innerHTML = "TIME UP!!";
 }
-}, 1000);
+}, 2000);
 
 }
