@@ -1,12 +1,9 @@
 //Random number generator
-var countDownDate;
 document.addEventListener('DOMContentLoaded', function() {
   var link = document.getElementById('timeButton');
   link.addEventListener('click', function(){
-    countDownDate = new Date().getTime()+15*60*1000;
     urMom(); 
   });
-  urMom(); 
 });
 
 function eraseRecoredTime() {
@@ -31,25 +28,16 @@ window.onload = getNumber; // Runs the function on click
 
 function urMom()
 {
-  function setTheDate()
-{
-  chrome.storage.sync.set({"dateToTimeOff" : countDownDate}, function() {
-  });
-}
-
-setTheDate();
+var countDownDate = new Date().getTime()+15*60*1000;
 
 
 // Run myfunc every second
 setInterval(function() {
-
+alert("your bad");
 
 //1st alert here working
 var now = new Date().getTime();
-var timeleft;
-chrome.storage.sync.get("dateToTimeOff", function(timeDatabase) {
-  timeleft = timeDatabase.dateToTimeOff - now;
-}); 
+var timeleft =countDownDate-now;
 
 // Calculating the days, hours, minutes and seconds left
 var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
@@ -87,6 +75,6 @@ if (timeleft < 0) {
     document.getElementById("secs").innerHTML = ""
     document.getElementById("end").innerHTML = "TIME UP!!";
 }
-}, 2000);
+}, 3000);
 
 }
