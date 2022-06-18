@@ -10,6 +10,7 @@ body {
 .header-text {
     font-size: 30px;
     display: inline;
+    color: white;
 }
 
 .title {
@@ -18,9 +19,8 @@ body {
     color: white;
 }
 .button {
-    margin-left: 60px;
-    padding-left: 20px;
-    background-color: #4CAF50;
+    margin-left: 80px;
+    background-color: #00AEC3;
     border: none;
     color: white;
     padding: 15px 32px;
