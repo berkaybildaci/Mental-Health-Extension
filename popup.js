@@ -1,5 +1,14 @@
 //Random number generator
 
+document.addEventListener('DOMContentLoaded', function() {
+  var link = document.getElementById('timeButton');
+  link.addEventListener('click', function(){
+      getTime(); 
+  });
+});
+
+
+
 function getNumber() {
   var minNumber = 0; // The minimum number you want
   var maxNumber = 100; // The maximum number you want
@@ -10,6 +19,9 @@ function getNumber() {
 
 window.onload = getNumber; // Runs the function on click
 
+function getTime()
+{
+  
 
 // The data/time we want to countdown to
  //var countDownDate = new Date("Jul 25, 2022 16:37:52").getTime();
@@ -38,3 +50,4 @@ if (timeleft < 0) {
 }
 }, 1000);
 
+}

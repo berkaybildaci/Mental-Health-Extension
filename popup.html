@@ -17,6 +17,14 @@
     <p id="secs"class="header-text"></p>
     <h2 id="end"></h2>
     <button id="timeButton" class="button">15 Minutes</button>
-    
+    <p id="demo">Click me.</p>
+
+<script>
+document.getElementById("demo").addEventListener("click", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+</script>
   </body>
 </html>
