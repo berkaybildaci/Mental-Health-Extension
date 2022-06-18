@@ -41,7 +41,7 @@ var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 document.getElementById("mins").innerHTML = minutes + "m " 
 document.getElementById("secs").innerHTML = seconds + "s " 
     
-console.log("working");
+
 // Display the message when countdown is over
 if (timeleft < 0) {
     clearInterval(myfunc);
