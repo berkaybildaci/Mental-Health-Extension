@@ -1,21 +1,18 @@
 //Random number generator
 var countDownDate;
 document.addEventListener('DOMContentLoaded', function() {
-
   var link = document.getElementById('timeButton');
-  alert("workgin");
-  clearInterval(myfunc);
-  urMom(); 
   link.addEventListener('click', function(){
     countDownDate = new Date().getTime()+15*60*1000;
-    clearInterval(myfunc);
     urMom(); 
   });
-
+  urMom(); 
 });
 
 function eraseRecoredTime() {
 
+  chrome.storage.sync.set({"dateToTimeOff" : 0}, function() {
+  });
   chrome.storage.sync.set({"timeInSeconds" : 0}, function() {
   });
   chrome.storage.sync.set({ "timeInMinutes" : 0}, function() {
@@ -34,27 +31,43 @@ window.onload = getNumber; // Runs the function on click
 
 function urMom()
 {
+  function setTheDate()
+{
+  chrome.storage.sync.set({"dateToTimeOff" : countDownDate}, function() {
+  });
+}
+
+setTheDate();
+
 
 // Run myfunc every second
-var myfunc = setInterval(function() {
+setInterval(function() {
 
 
+//1st alert here working
 var now = new Date().getTime();
-var timeleft = countDownDate - now;
-   
+var timeleft;
+chrome.storage.sync.get("dateToTimeOff", function(timeDatabase) {
+  timeleft = timeDatabase.dateToTimeOff - now;
+}); 
+
 // Calculating the days, hours, minutes and seconds left
 var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
+//2nd alert here working
+
 function recordTime() {
 
-  chrome.storage.sync.set({"timeInSeconds" : seconds }, function() {
+  chrome.storage.sync.set({"dateToTimeOff" : countDownDate}, function() {
+  });
+  chrome.storage.sync.set({"timeInSeconds" : seconds}, function() {
   });
   chrome.storage.sync.set({ "timeInMinutes" : minutes}, function() {
   });
 }
 recordTime();
-
+//3rd alert here working
 
 chrome.storage.sync.get("timeInSeconds", function(timeDatabase) {
   document.getElementById("secs").innerHTML = timeDatabase.timeInSeconds + "s" 
