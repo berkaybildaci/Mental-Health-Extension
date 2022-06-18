@@ -1,14 +1,3 @@
-//Random number generator
-var countDownDate=0;
-document.addEventListener('DOMContentLoaded', function() {
-  var link = document.getElementById('timeButton');
-  link.addEventListener('click', function(){
-      countDownDate = new Date().getTime()+15*60*1000;
-      getTime(); 
-  });
-});
-
-
 
 function getNumber() {
   var minNumber = 0; // The minimum number you want

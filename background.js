@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
       countDownDate = new Date().getTime()+15*60*1000;
       getTime(); 
   });
+  countDownDate = new Date().getTime()+15*60*1000;
+  getTime(); 
 });
 
 
