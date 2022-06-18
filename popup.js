@@ -55,7 +55,7 @@ chrome.storage.sync.get("dateToTimeOff", function(timeDatabase) {
 var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-//2nd alert here working
+//2nd aler here working
 
 function recordTime() {
 
