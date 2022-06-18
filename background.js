@@ -10,7 +10,7 @@ function getNumber() {
   
   window.onload = getNumber; // Runs the function on click
   
-  
+  timeButton.addEventListener("click", async () => {
   // The data/time we want to countdown to
    //var countDownDate = new Date("Jul 25, 2022 16:37:52").getTime();
   var countDownDate = new Date().getTime()+15*60*1000;
@@ -36,3 +36,5 @@ function getNumber() {
       document.getElementById("end").innerHTML = "TIME UP!!";
   }
   }, 1000);
+  
+    });
