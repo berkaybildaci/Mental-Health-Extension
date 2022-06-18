@@ -36,11 +36,24 @@ var timeleft = countDownDate - now;
 // Calculating the days, hours, minutes and seconds left
 var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-    
+
+//chrome.runtime.onInstalled.addListener(() => {
+//  chrome.storage.sync.set({minutes: minutes });
+  
+//});
+
+// chrome.storage.sync.set({ minutes });
+// chrome.storage.sync.set({ seconds }); 
+
+//chrome.stroage.sync.get(({ minutes }) => {
+//document.getElementById("mins").innerHTML = minutes;
+//});
+
 // Result is output to the specific element
 document.getElementById("mins").innerHTML = minutes + "m " 
-document.getElementById("secs").innerHTML = seconds + "s " 
-    
+document.getElementById("secs").innerHTML = seconds  + "s " 
+  
+
 
 // Display the message when countdown is over
 if (timeleft < 0) {
