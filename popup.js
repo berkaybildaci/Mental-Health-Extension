@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     urMom(); 
     clearInterval(myfunc);
   });
-  
 });
 
 function eraseRecoredTime() {
