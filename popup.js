@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     clearInterval(myfunc);
     urMom(); 
   });
+  
 });
 
 function eraseRecoredTime() {
