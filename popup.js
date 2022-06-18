@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var link = document.getElementById('timeButton');
   link.addEventListener('click', function(){
-    countDownDate = new Date().getTime()+15*60*1000;
+    countDownDate = new Date().getTime()+1*60*100;
     urMom();
   });
 });
@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function getNumber() {
-  var minNumber = 0; // The minimum number you want
-  var maxNumber = 100; // The maximum number you want
+  var minNumber = 1; // The minimum number you want
+  var maxNumber = 9; // The maximum number you want
   var randomnumber = Math.floor(Math.random() * (maxNumber + 1) + minNumber); // Generates random number
   document.getElementById("myNumber").innerHTML = randomnumber; // Sets content of <div> to number
   return false; // Returns false just to tidy everything up
@@ -20,6 +20,9 @@ function getNumber() {
 
 window.onload = getNumber; // Runs the function on click
 
+var imagetoChange = document.getElementById(randomnumber);
+document.getElementById(randomnumber).style.height = 0;
+    //imagetoChange.classList.remove("disabled");
 function urMom(){
 
 
@@ -45,6 +48,9 @@ if (timeleft < 0) {
     document.getElementById("mins").innerHTML = ""
     document.getElementById("secs").innerHTML = ""
     document.getElementById("end").innerHTML = "TIME UP!!";
+    var imagetoChange = document.getElementById(randomnumber);
+    imagetoChange.classList.remove('disabled');
+
 }
 }, 1000);
 }

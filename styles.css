@@ -31,3 +31,10 @@ body {
     border-radius: 25px;
 
   } 
+.disabled {
+    display: none;
+}
+.enabled {
+    width: 100px;
+    height: 100px;
+}
