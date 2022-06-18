@@ -13,7 +13,8 @@
      "idle"
     ],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "persistent": true
     },
     "action": {
         "default_popup": "popup.html"
