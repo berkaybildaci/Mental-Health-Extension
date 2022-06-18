@@ -3,7 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   var link = document.getElementById('timeButton');
   link.addEventListener('click', function(){
-      getTime(); 
+      var countDownDate = new Date().getTime()+15*60*1000;
+      getTime(countDownDate); 
   });
 });
 
@@ -19,13 +20,13 @@ function getNumber() {
 
 window.onload = getNumber; // Runs the function on click
 
-function getTime()
+function getTime(countDownDate)
 {
   
 
 // The data/time we want to countdown to
  //var countDownDate = new Date("Jul 25, 2022 16:37:52").getTime();
-var countDownDate = new Date().getTime()+15*60*1000;
+
 // Run myfunc every second
 var myfunc = setInterval(function() {
 
